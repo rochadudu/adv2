@@ -7,8 +7,26 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+    <header>
+        <div class="header-container">
+            <h1>Escritório de Advocacia</h1>
+            <nav>
+                <ul>
+                    <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="inicial.html">Inicio</a></li>
+                    <li><a href="cadastroadv.html">Cadastrar Advogado</a></li>
+                    <li><a href="registro.html">Login Advogado</a></li>
+                    <li><a href="logincliente.html">Login Cliente</a></li>
+                    <li><a href="cadastrocliente.html">Cadastrar Cliente</a></li>
+                    <li><a href="paginacliente.html">Cliente</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
     <div class="container">
-        <h1>Área do Advogado</h1>
+        <div class="h5">Área do Advogado</div>
         <form action="/cadastro.html" method="POST">
             <div class="input-group">
                 <label for="email">E-mail:</label>
@@ -18,11 +36,12 @@
                 <label for="senha">Senha:</label>
                 <input type="password" id="senha" name="senha" required>
             </div>
-            <button type="submit" a href="registro.html">Entrar</button>
+            <button type="submit">Entrar</button>
         </form>
         <div class="links">
             <a href="formulario.html">Registrar-se</a>
         </div>
     </div>
+
 </body>
 </html>
