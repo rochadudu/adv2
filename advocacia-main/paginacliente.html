@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Área do Cliente - Escritório de Advocacia</title>
+    <link rel="stylesheet" href="paginacliente.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1>Escritório de Advocacia</h1>
+            <nav>
+                <ul>
+                    <l<li><a href="inicial.html">Inicio</a></li>
+                    <li><a href="cadastroadv.html">Cadastrar Advogado</a></li>
+                    <li><a href="registro.html">Login Advogado</a></li>
+                    <li><a href="cadastrocliente.html">Cadastrar Cliente</a></li>
+                    <li><a href="agenda.html">Agenda</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1 class="h5">Bem-vindo, [Nome do Cliente]</h1>
+        <p>Esta é sua área exclusiva de cliente. Aqui você pode gerenciar suas informações e acompanhar seus processos.</p>
+
+        <div class="info-cliente">
+            <h2>Seus Dados</h2>
+            <p><strong>Nome:</strong> [Nome do Cliente]</p>
+            <p><strong>E-mail:</strong> [E-mail do Cliente]</p>
+            <p><strong>CPF:</strong> [CPF do Cliente]</p>
+            <p><strong>Telefone:</strong> [Telefone do Cliente]</p>
+            <button class="btn" onclick="window.location.href='cadastrocliente.html'">Atualizar Dados</button>
+        </div>
+
+        <div class="processos">
+            <h2>Seus Processos</h2>
+            <ul>
+                <li>Processo #12345 - Status: Em andamento</li>
+                <li>Processo #67890 - Status: Concluído</li>
+            </ul>
+    </div>
+
+</body>
+</html>
