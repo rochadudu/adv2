@@ -1,0 +1,203 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url("img/fundo.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Roboto', sans-serif; /* Fonte Roboto para o corpo */
+    background-color: #2e2e2e;
+    color: #000000;
+    line-height: 1.6;
+}
+
+/* Estilos do cabeçalho */
+header {
+    background-color: #004080;
+    color: white;
+    padding: 15px 20px;
+}
+
+.header-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-container h1 {
+    margin: 0;
+    font-family: 'Playfair Display', serif; /* Fonte Playfair Display para títulos */
+}
+
+nav {
+    display: flex;
+}
+
+nav li {
+    list-style-type: none;
+    margin-left: 20px;
+}
+
+nav li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav li a:hover {
+    text-decoration: underline;
+}
+
+/* Título principal */
+h1 {
+    color: #ffffff;
+    text-align: center;
+    margin-top: 20px;
+    font-family: 'Playfair Display', serif; /* Fonte Playfair Display para o título */
+}
+
+/* Container principal */
+main {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Estilo para o título */
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    animation: slideIn 1s ease-out;
+}
+
+/* Estilo para o formulário */
+#formConsultaAgendamentos {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    animation: slideIn 1s ease-out;
+}
+
+#formConsultaAgendamentos label,
+#formConsultaAgendamentos input,
+#formConsultaAgendamentos button {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    opacity: 0;
+    animation: slideIn 1s ease-out forwards;
+}
+
+/* Animação escalonada */
+#formConsultaAgendamentos label:nth-child(1) {
+    animation-delay: 0.1s;
+}
+#formConsultaAgendamentos input:nth-child(2) {
+    animation-delay: 0.2s;
+}
+#formConsultaAgendamentos label:nth-child(3) {
+    animation-delay: 0.3s;
+}
+#formConsultaAgendamentos input:nth-child(4) {
+    animation-delay: 0.4s;
+}
+#formConsultaAgendamentos label:nth-child(5) {
+    animation-delay: 0.5s;
+}
+#formConsultaAgendamentos input:nth-child(6) {
+    animation-delay: 0.6s;
+}
+#formConsultaAgendamentos button {
+    animation-delay: 0.7s;
+}
+
+/* Estilo da tabela */
+#resultadoConsulta {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    animation: slideIn 1s ease-out;
+}
+
+/* Formulário de consulta */
+#formConsulta {
+    margin-bottom: 20px;
+}
+
+#formConsulta label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+    font-family: 'Playfair Display', serif; /* Fonte Playfair Display para os rótulos */
+}
+
+#formConsulta input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+/* Botão */
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #004080;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #003366;
+}
+
+/* Tabela de resultados */
+#resultadoConsulta {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+#resultadoConsulta th,
+#resultadoConsulta td {
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+#resultadoConsulta th {
+    background-color: #004080;
+    color: white;
+}
+
+#resultadoConsulta tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
