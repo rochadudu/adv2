@@ -1,0 +1,472 @@
+/* Estilo para o corpo e estrutura da página */
+/* Estilos Gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    background-color: #1a1a2e; /* Azul mais escuro */
+    color: #f5f5f5; /* Texto claro */
+}
+
+.background1{
+    background-image: url("img/img8.png");
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.background2{
+    background-image: url("img/img9.png");
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.background3{
+    background-image: url("img/img0.png");
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.background {
+    background-image: url("img/img1.png");
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100vh;
+}
+
+img, .feature-box {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    margin-top: 50px;
+}
+
+.sobrenos{
+    box-shadow: 0 4px 8px rgb(0, 0, 0, 0.3);
+    margin-top: 270px; /* Mova mais para baixo ajustando este valor */
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    width: 80%; /* Defina a largura desejada para a seção */
+    max-width: 800px; /* Limite de largura para não esticar muito */
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    border: 1px solid #ffffff;
+}
+
+.containerA{
+    margin-top: 90px;
+    padding: 40px;
+}
+
+
+#container {
+    opacity: 0; /* Começa invisível */
+    transform: translateY(20px); /* Começa um pouco deslocado para baixo */
+    animation: fadeInSlide 0.2s ease-in-out forwards; /* Define a animação */
+}
+
+/* Definindo a animação fadeInSlide */
+@keyframes fadeInSlide {
+    0% {
+        opacity: 0;
+        transform: translateY(20px); /* Começa abaixo */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Fica na posição original */
+    }
+}
+
+/* Animações */
+@keyframes slideInFromRight {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Animação para Boas-Vindas */
+.meio h1 {
+    font-size: 4rem;
+    opacity: 0;
+    animation: slideInFromRight 0.6s ease-out forwards;
+    animation-delay: 0.5s;
+    text-align: left;
+    padding: 25px;
+}
+
+/* Estilo das Seções */
+section {
+    padding: 2rem;
+    text-align: left;
+    max-width: 800px;
+    margin: 2rem auto;
+    opacity: 0;
+    animation: fadeIn 1.5s ease-out forwards;
+}
+
+h1, h2, h3, p {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-family: 'Playfair Display', serif;
+}
+
+/* Serviços */
+#servicos {
+    text-align: left;
+    display: flex;
+    justify-content: start;
+    gap: 1.5rem;
+}
+
+.servico-item {
+    border: 1px solid #ffffff;
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+    border-radius: 5px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Expansão ao passar o mouse */
+.servico-item:hover {
+    transform: scale(1.05); /* Expande levemente o item */
+    background-color: transparent; /* Alteração opcional para dar um destaque de fundo */
+}
+
+/* Diferenciais */
+#diferenciais ul {
+    list-style: none;
+    text-align: left;
+}
+
+#diferenciais ul li {
+    padding: 0.5rem 0;
+    font-size: 1.2rem;
+}
+
+/* Depoimentos */
+blockquote {
+    font-style: italic;
+    margin: 1rem 0;
+    color: #ccc;
+}
+
+/* Contato */
+.contact-btn {
+    background-color: #004080;
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.contact-btn:hover {
+    background-color: #000000; /* Cor vibrante para os botões */
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+/* Footer */
+footer {
+    background-color: #004080;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+}
+
+.footer-container nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+.footer-container nav ul li {
+    margin: 0 10px;
+}
+
+.footer-container nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-container nav ul li a:hover {
+    text-decoration: underline;
+}
+
+header h1 {
+    color: #fff;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+}
+
+header nav ul li {
+    margin-right: 15px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Contêineres principais */
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    opacity: 0;
+    transform: translateX(100%);
+    animation: slideIn 0.1s ease-out forwards;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.form-group, .input-group {
+    margin-bottom: 15px;
+}
+
+/* Formulários */
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+input[type="tel"],
+input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #3700ff;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #004080;
+}
+
+/* Links */
+.links a {
+    color: #444;
+    text-decoration: none;
+}
+
+.links a:hover {
+    text-decoration: underline;
+}
+
+/* Tabela */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+th {
+    background-color: #004080;
+    color: #fff;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+header {
+    background-color: #004080;
+    color: #004080;
+    padding: 1rem;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+}
+
+header h1 {
+    font-size: 1.5rem;
+}
+
+nav {
+    display: flex;
+}
+
+nav li {
+    list-style: none;
+    margin-left: 1rem;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #ccc;
+}
+
+main {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 30px;
+    opacity: 0;
+    transform: translateX(100%);
+    animation: slideIn 0.8s ease-out forwards;
+}
+
+h2 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: #ffffff;
+}
+
+form label {
+    display: block;
+    margin-top: 1rem;
+    font-weight: bold;
+}
+
+form input {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.25rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+form button {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    margin-top: 1.5rem;
+    border: none;
+    background-color: #333;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+form button:hover {
+    background-color: #004080;
+}
+
+.container {
+    border-radius: 8px;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #004080;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #333;
+}
+
+#resultado {
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+
+

@@ -41,7 +41,9 @@ db.serialize(() => {
                    id INTEGER PRIMARY KEY AUTOINCREMENT,
                    nome TEXT NOT NULL,
                    cpf TEXT UNIQUE NOT NULL,
-                   oab TEXT NOT NULL
+                   oab TEXT NOT NULL,
+                   nascimentoProfissional DATE NOT NULL,
+                   enderecoProfissional TEXT NOT NULL
                )
            `, (err) => {
         if (err) {
@@ -87,8 +89,8 @@ app.post('/cadastrar-cliente', (req, res) => {
 
 // Rota para cadastrar um profissional
 app.post('/cadastrar-profissional', (req, res) => {
-    const { nome, cpf, oab,} = req.body;
-    db.run("INSERT INTO Profissional (nome, cpf) VALUES (?, ?, ?)", [nome, cpf, oab,], function (err) {
+    const { nome, cpf, oab, enderecoProfissional, nascimentoProfissional } = req.body;
+    db.run("INSERT INTO Profissional (nome, cpf, oab, enderecoProfissional, nascimentoProfissional ) VALUES (?, ?, ?, ?, ?)", [nome, cpf, oab, enderecoProfissional, nascimentoProfissional], function (err) {
         if (err) {
             console.error('Erro ao cadastrar profissional:', err);
             res.status(500).send('Erro ao cadastrar profissional');
