@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Advogado</title>
+    <link rel="stylesheet" href="todos.css">
+</head>
+<body>
+    <div class="background1">
+        <header>
+            <div class="header-container">
+                <h1>Escritório de Advocacia</h1>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="cadastroadv.html">Cadastrar Advogado</a></li>
+                        <li><a href="cadastrocliente.html">Cadastrar Cliente</a></li>
+                        <li><a href="consulta.html">Consulta</a></li>
+                        <li><a href="nota.html">Cliente</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <main>
+            <h2>Cadastrar Advogado</h2>
+            <form id="container" onsubmit="event.preventDefault(); cadastrarProfissional();">
+                <label for="nomeProfissional">Nome:</label>
+                <input type="text" id="nomeProfissional" name="nome" placeholder="Nome:" required />
+
+                <label for="cpfProfissional">CPF:</label>
+                <input type="text" id="cpfProfissional" name="cpf" placeholder="CPF:" required />
+
+                <label for="nascimentoProfissional">Data de Nascimento:</label>
+                <input type="date" id="nascimentoProfissional" name="data" />
+
+                <label for="enderecoProfissional">Endereço:</label>
+                <input type="text" id="enderecoProfissional" name="endereco" placeholder="Seu Endereço:" required />
+
+                <label for="oabProfissional">OAB:</label>
+                <input type="text" id="oabProfissional" name="oab" placeholder="OAB:" required />
+                
+                <button type="submit" id="btnCadastrar">Cadastrar Profissional</button>
+            </form>
+
+            <div id="resultadoConsulta">
+                <h3>Resultados da Consulta</h3>
+                <table id="tabelaAgendamentos">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nome</th>
+                            <th>CPF</th>
+                            <th>Data de Nascimento</th>
+                            <th>Endereço</th>
+                            <th>OAB</th>
+                            <th>Ação</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabelaBody">
+                        <!-- Resultados da consulta serão inseridos aqui -->
+                    </tbody>
+                </table>
+            </div>
+        </main>
+        <script src="script.js"></script>
+    </div>
+</body>
+</html>
