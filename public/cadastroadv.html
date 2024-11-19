@@ -40,11 +40,9 @@
                 <label for="oabProfissional">OAB:</label>
                 <input type="text" id="oabProfissional" name="oab" placeholder="OAB:" required />
                 
-                <button type="submit">Cadastrar Profissional</button>
-                <button id="btnAtualizarAgendamento" onclick="atualizarAgendamento()" type="button" style="display:none;">Atualizar Agendamento</button>
-                <button onclick="consultarAgendamentos(event)" type="submit">Consultar Agendamentos</button>
+                <button type="submit" onclick="cadastrarProfissional()">Cadastrar Profissional</button><br>
+                <button type="submit" onclick="consultarProfissionais(event)">Consultar Profissional</button>
 
-                    <button id="btnAtualizarAgendamento" onclick="atualizarAgendamento()" type="button" style="display:none;">Atualizar Agendamento</button>
 
                 <div id="resultadoConsulta">
                     <h3>Resultados da Consulta</h3>

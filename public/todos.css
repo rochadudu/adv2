@@ -314,27 +314,8 @@ button:hover {
     text-decoration: underline;
 }
 
-/* Tabela */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-}
 
-th, td {
-    padding: 12px;
-    border: 1px solid #ddd;
-    text-align: left;
-}
 
-th {
-    background-color: #004080;
-    color: #fff;
-}
-
-tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
 
 header {
     background-color: #004080;
@@ -468,5 +449,52 @@ button:hover {
     font-weight: bold;
 }
 
+/* Tabelas */
+
+#tabelaAgendamentos {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+    background-color: transparent;
+    color: #ffffff;
+}
+
+#tabelaAgendamentos th, #tabelaAgendamentos td {
+    padding: 12px;
+    border: 1px solid #ffffff;
+    text-align: left;
+}
+
+#tabelaAgendamentos th {
+    background-color: #004080;
+    color: #fff;
+}
+
+#tabelaAgendamentos tbody tr:nth-child(even) {
+    background-color: transparent;
+}
 
 
+
+#tabelaClientes {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+    background-color: transparent;
+    color: #ffffff;
+}
+
+#tabelaClientes th, #tabelaClientes td {
+    padding: 12px;
+    border: 1px solid #ffffff;
+    text-align: left;
+}
+
+#tabelaClientes th {
+    background-color: #004080;
+    color: #fff;
+}
+
+#tabelaClientes tbody tr:nth-child(even) {
+    background-color: transparent;
+}

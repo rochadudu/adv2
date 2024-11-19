@@ -4,7 +4,7 @@ async function cadastrarCliente() {
     const cpf = document.getElementById('cpfCliente').value;
     const dataNascimento = document.getElementById('dataNascimento').value;
     const endereco = document.getElementById('enderecoCliente').value;
-    
+
 
     try {
         const response = await fetch('/cadastrar-cliente', {
@@ -31,7 +31,7 @@ async function cadastrarProfissional() {
     const oab = document.getElementById('oabProfissional').value;
     const nascimentoProfissional = document.getElementById('nascimentoProfissional').value;
     const enderecoProfissional = document.getElementById('enderecoProfissional').value;
-    
+
 
     await fetch('/cadastrar-profissional', {
         method: 'POST',
@@ -64,7 +64,7 @@ async function cadastrarAgendamento() {
 // Função para consultar agendamentos
 async function consultarAgendamentos(event) {
     event.preventDefault(); // Previne o envio do formulário
-   
+
     const cpfCliente = document.getElementById("cpfClienteConsulta").value;
     const cpfProfissional = document.getElementById("cpfProfissionalConsulta").value;
     const data = document.getElementById("dataConsulta").value;
@@ -117,6 +117,55 @@ async function consultarAgendamentos(event) {
         console.error('Erro:', error);
         const row = tabelaAgendamentos.insertRow();
         row.insertCell(0).colSpan = 6;
+        row.cells[0].innerText = "Erro ao consultar agendamentos.";
+    }
+}
+
+//Consulta Profissional
+
+async function consultarProfissionais(event) {
+    event.preventDefault(); // Previne o envio do formulário
+
+    const cpf = document.getElementById("cpfProfissional").value;
+
+
+
+
+    const tabelaAgendamentos = document.getElementById("tabelaAgendamentos").querySelector("tbody");
+    tabelaAgendamentos.innerHTML = ""; // Limpa resultados anteriores
+
+
+
+    try {
+        const response = await fetch(`/consultar-advogado?${cpf}`);
+        if (!response.ok) throw new Error('Erro na consulta');
+
+        const agendamentos = await response.json();
+        if (agendamentos.length === 0) {
+            const row = tabelaAgendamentos.insertRow();
+            row.insertCell(0).colSpan = 5;
+            row.cells[0].innerText = "Nenhum profissional encontrado.";
+            return;
+        }
+
+        agendamentos.forEach(agendamento => {
+            const row = tabelaAgendamentos.insertRow();
+            row.insertCell(0).innerText = agendamento.id;
+            row.insertCell(1).innerText = agendamento.nome;
+            row.insertCell(2).innerText = agendamento.cpf;
+            row.insertCell(3).innerText = agendamento.nascimentoProfissonal;
+            row.insertCell(5).innerText = agendamento.oab;
+
+
+            const actionsCell = row.insertCell(6);
+            actionsCell.innerHTML = `
+                <button onclick="carregarAgendamentoParaEdicao('${agendamento.id}')">Editar</button>
+            `;
+        });
+    } catch (error) {
+        console.error('Erro:', error);
+        const row = tabelaAgendamentos.insertRow();
+        row.insertCell(0).colSpan = 5;
         row.cells[0].innerText = "Erro ao consultar agendamentos.";
     }
 }
@@ -188,5 +237,3 @@ async function carregarAgendamentoParaEdicao(id) {
         alert(`Erro ao carregar agendamento para edição: ${error.message}`);
     }
 }
-
-

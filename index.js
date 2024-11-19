@@ -89,8 +89,8 @@ app.post('/cadastrar-cliente', (req, res) => {
 
 // Rota para cadastrar um profissional
 app.post('/cadastrar-profissional', (req, res) => {
-    const { nome, cpf, oab, enderecoProfissional, nascimentoProfissional } = req.body;
-    db.run("INSERT INTO Profissional (nome, cpf, oab, enderecoProfissional, nascimentoProfissional ) VALUES (?, ?, ?, ?, ?)", [nome, cpf, oab, enderecoProfissional, nascimentoProfissional], function (err) {
+    const { nome, cpf, oab, nascimentoProfissional, enderecoProfissional } = req.body;
+    db.run("INSERT INTO Profissional (nome, cpf, oab, nascimentoProfissional, enderecoProfissional ) VALUES (?, ?, ?, ?, ?)", [nome, cpf, oab, nascimentoProfissional, enderecoProfissional], function (err) {
         if (err) {
             console.error('Erro ao cadastrar profissional:', err);
             res.status(500).send('Erro ao cadastrar profissional');
@@ -152,6 +152,29 @@ app.get('/consultar-agendamentos', (req, res) => {
         res.json(rows);
     });
 });
+
+//Consultar Advogado 
+app.get('/consultar-advogado', (req, res) => {
+    const {cpf} = req.query;
+
+    let sql = "SELECT * FROM Profissional WHERE 1=1";
+    const params = [];
+
+    if (cpf) {
+        sql += " AND cpf = ?";
+        params.push(cpf);
+    }
+    
+
+    db.all(sql, params, (err, rows) => {
+        if (err) {
+            console.error('Erro ao consultar advogado:', err);
+            return res.status(500).send('Erro ao consultar advogado.');
+        }
+        res.json(rows);
+    });
+});
+
 
 // Rota para excluir um agendamento
 app.delete('/excluir-agendamento', (req, res) => {
